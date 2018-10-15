@@ -2,7 +2,7 @@ version: '2.1'
 services:
 
   postgres:
-    image: postgres:alpine
+    image: dimedroli4/opencell_db
     container_name: postgres
     environment:
       POSTGRES_USER: opencell_db_user
