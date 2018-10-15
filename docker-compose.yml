@@ -2,6 +2,7 @@ version: '2.1'
 services:
 
   postgres:
+    #image: postgres:alpine
     image: dimedroli4/opencell_db
     container_name: postgres
     environment:
@@ -14,6 +15,7 @@ services:
        - $PWD/input-files/import-postgres.sql:/docker-entrypoint-initdb.d/import-postgres.sql
 
   opencell:
+    #image: opencell/wildfly-opencell
     image: dimedroli4/opencell
     container_name: opencell
     depends_on:
