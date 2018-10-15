@@ -33,8 +33,8 @@ curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/docker-comp
 mkdir input-files
 #TODO get war from out VCS
 curl -L http://dl.opencellsoft.com/current/opencell.war -o input-files/opencell.war
-curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/import-postgres.sql
-curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/init-user-db.sh
+curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/import-postgres.sql -o input-files/import-postgres.sql
+curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/init-user-db.sh -o input-files/init-user-db.sh
 #      - -Dkeycloak.migration.realmName=opencell
 
 echo "Pulling docker images from docker hub"
@@ -63,3 +63,4 @@ echo "Please open http://localhost:8080/ page to start"
 echo "> Marketing manager is available on http://localhost:8080/opencell with credentials: opencell.marketingmanager / opencell.marketingmanager"
 echo "> Administration console is available on http://localhost:8080/opencell with crendialts: opencell.superadmin / opencell.superadmin"
 echo ""
+exit 0
