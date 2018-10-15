@@ -27,14 +27,13 @@ docker_path=`which docker.io || which docker`
 
 
 echo ">>> Downloading opencell softwares & docker images"
-if [ ! -d "$PWD/tmp" ]; then
-  mkdir tmp
-fi
-cd tmp
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/docker-compose.yml -o docker-compose.yml
-mkdir input-files
+if [ ! -d "$PWD/input-files" ]; then
+  mkdir input-files
+fi
 #TODO get war from out VCS
 curl -L http://dl.opencellsoft.com/current/opencell.war -o input-files/opencell.war
+#
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/import-postgres.sql -o input-files/import-postgres.sql
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/init-user-db.sh -o input-files/init-user-db.sh
 #      - -Dkeycloak.migration.realmName=opencell

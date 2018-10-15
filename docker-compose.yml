@@ -10,8 +10,8 @@ services:
       POSTGRES_DB : opencell_db
       POSTGRES_PORT : 5432
     volumes:
-       - $PWD/input-files/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
-       - $PWD/input-files/import-postgres.sql:/docker-entrypoint-initdb.d/import-postgres.sql
+       - $PWD/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+       - $PWD/import-postgres.sql:/docker-entrypoint-initdb.d/import-postgres.sql
 
   opencell:
     image: dimedroli4/opencell
@@ -29,4 +29,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - $PWD/input-files/opencell.war:/opt/jboss/wildfly/standalone/deployments/opencell.war
+      - $PWD/opencell.war:/opt/jboss/wildfly/standalone/deployments/opencell.war
