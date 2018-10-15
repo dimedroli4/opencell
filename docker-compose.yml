@@ -2,8 +2,7 @@ version: '2.1'
 services:
 
   postgres:
-    #image: postgres:alpine
-    image: dimedroli4/opencell_db
+    image: postgres:alpine
     container_name: postgres
     environment:
       POSTGRES_USER: opencell_db_user
@@ -15,7 +14,6 @@ services:
        - $PWD/input-files/import-postgres.sql:/docker-entrypoint-initdb.d/import-postgres.sql
 
   opencell:
-    #image: opencell/wildfly-opencell
     image: dimedroli4/opencell
     container_name: opencell
     depends_on:

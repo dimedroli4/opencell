@@ -44,7 +44,6 @@ docker-compose pull
 echo "Starting docker-compose"
 docker-compose up -d
 
-
 echo ">>> Waiting opencell is ready"
 ### Wait for application is up
 while ! (curl -sSf http://localhost:8080/opencell/about.xhtml | grep Version > /dev/null)
