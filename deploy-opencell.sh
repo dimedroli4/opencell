@@ -27,7 +27,9 @@ docker_path=`which docker.io || which docker`
 
 
 echo ">>> Downloading opencell softwares & docker images"
-mkdir tmp
+if [ ! -d "$PWD/tmp" ]; then
+  mkdir tmp
+fi
 cd tmp
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/docker-compose.yml -o docker-compose.yml
 mkdir input-files
@@ -48,15 +50,12 @@ echo ">>> Waiting opencell is ready"
 ### Wait for application is up
 while ! (curl -sSf http://localhost:8080/opencell/about.xhtml | grep Version > /dev/null)
 do
-sleep 3
-echo "Please wait, opencell not yet up"
+  sleep 5
+  echo "Please wait, opencell not yet up"
 done
 
 clear
 echo ">>> FINISHED !"
-
-cd ..
-rm -rf tmp
 
 echo "Great, now your environnement is ready !"
 echo "Please open http://localhost:8080/ page to start"

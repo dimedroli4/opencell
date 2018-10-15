@@ -3,7 +3,7 @@ services:
 
   postgres:
     image: dimedroli4/opencell_db
-    container_name: postgres-wildfly
+    container_name: postgres
     environment:
       POSTGRES_USER: opencell_db_user
       POSTGRES_PASSWORD: opencell_db_password
