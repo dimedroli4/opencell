@@ -6,9 +6,6 @@ command -v docker-compose >/dev/null 2>&1 || { echo "I require docker-compose bu
 command -v curl >/dev/null 2>&1 || { echo "I require curl but it's not installed.  Aborting." >&2; exit 1; }
 command -v unzip >/dev/null 2>&1 || { echo "I require unzip but it's not installed.  Aborting." >&2; exit 1; }
 docker_path=`which docker.io || which docker`
-# 1. docker daemon running?
-  # we send stderr to /dev/null cause we don't care about warnings,
-  # it usually complains about swap which does not matter
   test=`$docker_path info 2> /dev/null`
   if [[ $? -ne 0 ]] ; then
     echo "Cannot connect to the docker daemon - verify it is running and you have access"
