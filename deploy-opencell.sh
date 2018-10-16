@@ -38,6 +38,8 @@ curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/init-user-db.sh -o input-files/init-user-db.sh
 #      - -Dkeycloak.migration.realmName=opencell
 
+echo "Create external volume for pg data"
+docker volume create --name=pgdata
 echo "Pulling docker images from docker hub"
 docker-compose pull
 
