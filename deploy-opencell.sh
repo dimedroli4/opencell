@@ -61,5 +61,7 @@ echo "Great, now your environnement is ready !"
 echo "Please open http://localhost:8080/ page to start"
 echo "> Marketing manager is available on http://localhost:8080/opencell with credentials: opencell.marketingmanager / opencell.marketingmanager"
 echo "> Administration console is available on http://localhost:8080/opencell with crendialts: opencell.superadmin / opencell.superadmin"
+echo "To stop and keep your data you must run docker-compose stop"
+echo "Overvise, if you don't need to store ane data you must run docker-compose down -v"
 echo ""
 exit 0

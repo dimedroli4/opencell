@@ -11,7 +11,6 @@ services:
     volumes:
        - $PWD/input-files/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
        - $PWD/input-files/import-postgres.sql:/docker-entrypoint-initdb.d/import-postgres.sql
-       #- $PWD/pgdata:/var/lib/postgresql
   opencell:
     image: dimedroli4/opencell
     container_name: opencell
@@ -29,6 +28,3 @@ services:
       - "8080:8080"
     volumes:
       - $PWD/input-files/opencell.war:/opt/jboss/wildfly/standalone/deployments/opencell.war
-#volumes:
-#  pgdata:
-#    external: true
