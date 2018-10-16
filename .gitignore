@@ -25,3 +25,4 @@ import-postgres.sql/
 init-user-db.sh/
 pgdata/
 .DS_Store
+*.iml

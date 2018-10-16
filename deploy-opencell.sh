@@ -5,6 +5,7 @@ command -v docker >/dev/null 2>&1 || { echo "I require docker but it's not insta
 command -v docker-compose >/dev/null 2>&1 || { echo "I require docker-compose but it's not installed See See https://docs.docker.com/installation/ ....  Aborting." >&2; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo "I require curl but it's not installed.  Aborting." >&2; exit 1; }
 command -v unzip >/dev/null 2>&1 || { echo "I require unzip but it's not installed.  Aborting." >&2; exit 1; }
+command -v pip3 >/dev/null 2>&1 || { echo "I require pip3 but it's not installed.  Aborting." >&2; exit 1; }
 docker_path=`which docker.io || which docker`
   test=`$docker_path info 2> /dev/null`
   if [[ $? -ne 0 ]] ; then
@@ -22,7 +23,7 @@ if [ ! -d "$PWD/input-files" ]; then
   mkdir input-files
 fi
 #TODO get war from out VCS
-curl -L http://dl.opencellsoft.com/current/opencell.war -o input-files/opencell.war
+curl -L $(yadisk-direct https://yadi.sk/d/RXMUwAJ8UqZesA) -o input-files/opencell.war
 #
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/import-postgres.sql -o input-files/import-postgres.sql
 curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/input-files/init-user-db.sh -o input-files/init-user-db.sh
