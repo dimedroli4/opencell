@@ -22,6 +22,9 @@ curl -L https://raw.githubusercontent.com/dimedroli4/opencell/master/docker-comp
 if [ ! -d "$PWD/input-files" ]; then
   mkdir input-files
 fi
+if [ ! -f "$(which yadisk-direct)" ]; then
+    pip3 install wldhx.yadisk-direct
+fi
 #TODO get war from out VCS
 curl -L $(yadisk-direct https://yadi.sk/d/RXMUwAJ8UqZesA) -o input-files/opencell.war
 #
